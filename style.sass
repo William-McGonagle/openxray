@@ -1,0 +1,124 @@
+@import url(https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@300;700&display=swap)
+
+*
+    box-sizing: border-box
+    font-family: "Source Code Pro",monospace
+
+body
+    margin: 0px
+
+section
+    position: relative
+    width: 100vw
+    min-height: 100vh
+    background: #1a1a1a
+    color: white
+
+    .slideshow
+        position: absolute
+        width: 100vw
+        height: 100vh
+
+        img
+            position: absolute
+            width: 100vw
+            height: 100vh
+            object-fit: cover
+            opacity: 0
+
+    .openxrayLogo
+        position: absolute
+        right: 4vw
+        bottom: 0vw
+        width: 20vw
+
+    .blob
+        position: fixed
+        right: -50vw
+        top: -25vw
+        width: 120vw
+        height: 120vw
+        animation: move 20s ease-in-out infinite
+        transform-origin: 50% 50%
+        z-index: 1
+        fill: #e44444
+        pointer-events: none
+
+    .rightMax
+        position: relative
+        max-width: 800px
+        margin: 0px 0px 0px auto
+        padding: 100px 80px
+        z-index: 10
+
+        h1
+            text-align: right
+            font-size: 34px
+            z-index: 10
+
+        p
+            font-size: 18px
+            z-index: 8
+
+        a
+            font-size: 18px
+            color: white
+            z-index: 8
+
+.topbar
+    position: fixed
+    left: 0px
+    top: 0px
+    bottom: 0px
+    width: 200px
+    z-index: 9
+    display: flex
+    flex-direction: column
+    align-items: center
+    justify-content: center
+    padding: 25px
+
+    &:hover
+        a
+
+            p
+                opacity: 1
+
+    a
+        display: block
+        width: 100%
+        height: 30px
+        margin: 10px
+        position: relative
+
+        svg
+            height: 30px
+            width: 30px
+            display: inline
+            fill: white
+
+        p
+            display: inline
+            position: absolute
+            left: 50px
+            top: -10px
+            color: white
+            opacity: 0
+            transition: opacity 0.2s
+
+            &:hover
+                font-weight: 900
+
+@keyframes move
+    0%
+        transform: scale(1.1)
+    20%
+        transform: scale(1, 1) rotate(20deg)
+    40%
+        transform: scale(1.3, 1) rotate(80deg)
+    60%
+        transform: scale(1.2) rotate(-40deg)
+    80%
+        transform: scale(1.4) rotate(40deg)
+    100%
+        transform: scale(1.1)
